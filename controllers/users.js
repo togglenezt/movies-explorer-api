@@ -37,6 +37,10 @@ module.exports.updateUser = (req, res, next) => {
         next(new BadRequestError(errorMessages.userUpdateValidationError));
         return;
       }
+      if (err.code === 11000) {
+        next(new ConflictError(errorMessages.userCreateMongoError));
+        return;
+      }
       next(err);
     });
 };
