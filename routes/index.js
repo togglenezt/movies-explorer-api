@@ -2,7 +2,7 @@ const router = require('express').Router();
 const auth = require('../midllewares/auth');
 const errorRouter = require('./error');
 
-const { routesWithAuthValidation, signinValidation, signupValidation } = require('../midllewares/validation');
+const { signinValidation, signupValidation } = require('../midllewares/validation');
 const { login, createUser } = require('../controllers/users');
 
 // Краш тест сервера
@@ -15,9 +15,9 @@ router.get('/crash-test', () => {
 router.post('/signin', signinValidation, login);
 router.post('/signup', signupValidation, createUser);
 
-router.use('/users', routesWithAuthValidation, auth, require('./users'));
-router.use('/movies', routesWithAuthValidation, auth, require('./movies'));
+router.use('/users', auth, require('./users'));
+router.use('/movies', auth, require('./movies'));
 
-router.use('/', errorRouter);
+router.use('/', auth, errorRouter);
 
 module.exports = router;

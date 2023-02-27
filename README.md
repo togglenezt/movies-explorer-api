@@ -3,7 +3,8 @@
 ![Node](https://img.shields.io/badge/-Node.js-469837?logo=Node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-f3de35?logo=javaScript&logoColor=black)
 
-## Домен: 
+## Домен: https://mesto-api.nomoredomains.work/api/
+## Поддомен для api: https://api.mesto-api.nomoredomains.work/
 ## IP - адрес: http://158.160.36.139
 
 ## бэкенд для проекта Movie Explorer
